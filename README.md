@@ -17,6 +17,9 @@ Mercari is like ebay for Japan. Mercari wants a process to predict a price for s
 Categories were split into sub categories.\
 Used NLP on the Description to find the correlation to the price.
 
+# Model used
+NLP based
+
 # Visualizations 
 
 <img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/1_price_dist.png" height="300" width="1000"> 
