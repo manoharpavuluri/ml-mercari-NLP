@@ -1,50 +1,92 @@
-# About the Dataset
-The dataset is part of Mercari Price Suggestion Challenge in Kaggle.
+# Mercari Price Suggestion Challenge - NLP Analysis
 
-There are ~1.5Mil observations in the data set with multiple features. 
+## About the Dataset
+The dataset is part of the Mercari Price Suggestion Challenge on Kaggle. It contains approximately 1.5 million observations with multiple features for predicting item prices on the Mercari e-commerce platform.
 
-# About the challenge
-Mercari is like ebay for Japan. Mercari wants a process to predict a price for someone who wants to sell the items on the Mercari ecommerce platform.
+## About the Challenge
+Mercari is a popular e-commerce platform in Japan, similar to eBay. The challenge involves creating a process to predict prices for items that users want to sell on the Mercari platform.
 
-# Main features
- - <b>Observation</b> : free text, describing the item sold.
- - <b>brand_name</b> : brand of the item sold
- - <b>category_name</b> : Category of the item sold. these have muliple sub categories under the same feature name.
- - <b>shipping</b> : Whats the shipping cost associated with the item sold.
- - <b>price</b> : label feature. Price of the item sold.
+## Dataset Features
+- **train_id**: Unique identifier for each training observation
+- **name**: Free text describing the item being sold
+- **item_condition_id**: Condition of the item (1-5 scale)
+- **category_name**: Category of the item with multiple sub-categories
+- **brand_name**: Brand of the item
+- **price**: Target variable - the price of the item in USD
+- **shipping**: Shipping cost associated with the item
+- **item_description**: Detailed description of the item
 
-# Approach taken for analysis
-Categories were split into sub categories.\
-Used NLP on the Description to find the correlation to the price.
+## Analysis Approach
+1. **Data Preprocessing**: Cleaned and prepared the dataset for analysis
+2. **Feature Engineering**: 
+   - Split categories into sub-categories
+   - Extracted brand information
+   - Processed text data from item names and descriptions
+3. **NLP Analysis**: Applied Natural Language Processing techniques to analyze text correlations with price
+4. **Exploratory Data Analysis**: Comprehensive analysis of price distributions, brand patterns, and category relationships
 
-# Model used
-NLP based
+## Model Approach
+The analysis uses NLP-based techniques including:
+- Text preprocessing and tokenization
+- TF-IDF vectorization
+- Word frequency analysis
+- Statistical correlation analysis
 
-# Visualizations 
+## Installation and Setup
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/1_price_dist.png" height="300" width="1000"> 
+### Prerequisites
+- Python 3.7 or higher
+- pip package manager
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/2_brand_name.png" height="300" width="1000"> 
+### Installation Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/manoharpavuluri/ml-mercari-NLP.git
+   cd ml-mercari-NLP
+   ```
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/2_1_brand_name_cate.png" height="300" width="500"> 
+2. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/3_category1_bar.png" height="300" width="1000"> 
+3. Download NLTK data (if not already downloaded):
+   ```python
+   import nltk
+   nltk.download('punkt')
+   nltk.download('stopwords')
+   ```
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/3_1_main_cate_pie.png" height="300" width="600"> 
+4. Run the Jupyter notebook:
+   ```bash
+   jupyter notebook mercari.ipynb
+   ```
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/3_2_item_condi_pie.png" height="300" width="600"> 
+## Dependencies
+- pandas: Data manipulation and analysis
+- numpy: Numerical computing
+- seaborn: Statistical data visualization
+- matplotlib: Plotting library
+- plotly: Interactive plotting
+- wordcloud: Word cloud generation
+- nltk: Natural Language Processing toolkit
+- scikit-learn: Machine learning library
+- scipy: Scientific computing
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/4_cat1_compar_bar.png" height="300" width="1000"> 
+## Project Structure
+```
+ml-mercari-NLP/
+├── mercari.ipynb          # Main analysis notebook
+├── requirements.txt       # Python dependencies
+└── README.md             # Project documentation
+```
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/5_cat2_price_bar.png" height="300" width="1000"> 
+## Results
+The analysis provides insights into:
+- Price distribution patterns across different categories
+- Brand influence on pricing
+- Text feature correlations with price
+- Category-based pricing trends
 
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/6_cat2_compare.png" height="300" width="1000"> 
-
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/7_name_freq.png" height="300" width="1000"> 
-
-<img src="https://github.com/manoharpavuluri/mercari-NLP/blob/master/photos/8_desc_word_freq.png" height="300" width="1000"> 
-
-
-
-
-
+## License
+This project is for educational and research purposes.
